@@ -1,4 +1,13 @@
 {
+  "packages": [
+    "jay"
+  ],
   "deps": [],
-  "info": {}
+  "info": {
+    "description": "",
+    "homepage": "",
+    "license": "",
+    "documentation_url": "",
+    "version": "",
+    "name": ""  }
 }
