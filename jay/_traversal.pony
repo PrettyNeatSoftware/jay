@@ -106,4 +106,4 @@ class val UpdateTrav is JTraversal
 
 class val NoTraversal is JTraversal
 	fun apply(v: J): (J | NotSet) => v
-	fun update(_: J, v: (J | NotSet)) : (J | NotSet) => v
+	fun update(x: J, v: (J | NotSet)) : (J | NotSet) => v
