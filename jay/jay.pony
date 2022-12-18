@@ -1,11 +1,12 @@
 use "json"
+use "metric"
 use pc = "collections/persistent"
 
 trait val JExpr
 	fun json(): JsonType
 	fun string(): String val
 
-type J is (JExpr | String | I64 | F64 | Bool | None)
+type J is (JExpr | String | I64 | F64 | Metric | Bool | None)
 
 primitive NotSet is Stringable
 	fun string(): String iso ^ => "NotSet".string()

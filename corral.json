@@ -2,7 +2,12 @@
   "packages": [
     "jay"
   ],
-  "deps": [],
+  "deps": [
+    {
+      "locator": "github.com/niclash/pony-metric.git",
+      "version": "master"
+    }
+  ],
   "info": {
     "description": "",
     "homepage": "",
