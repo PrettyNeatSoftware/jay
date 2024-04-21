@@ -17,7 +17,7 @@ primitive JEq
 			if a'.data.size() != b'.data.size() then return false end
 			var i: USize = 0
 			while i < a'.data.size() do
-				try 
+				try
 					if JEq(a'.data(i)?, b'.data(i)?) == false then
 						return false
 					end

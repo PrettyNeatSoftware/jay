@@ -6,6 +6,10 @@
     {
       "locator": "github.com/niclash/pony-metric.git",
       "version": "master"
+    },
+    {
+      "locator": "github.com/ponylang/json.git",
+      "version": "main"
     }
   ],
   "info": {
@@ -16,3 +20,6 @@
     "version": "",
     "name": ""  }
 }
+
+
+

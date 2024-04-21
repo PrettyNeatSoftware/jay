@@ -17,7 +17,7 @@ class val TravCombine is JTraversal
 		| NotSet => NotSet
 		| let a': J => _b(a')
 		end
-	
+
 	fun update(input: J, value: (J | NotSet)): (J | NotSet) =>
 		try
 			_a.update(input, _b.update(_a(input) as J, value) as J)
@@ -37,20 +37,20 @@ class val TravObjKey is JTraversal
 		end
 
 	fun update(input: J, value: (J | NotSet)): (J | NotSet) =>
-		try (input as JObj)(_key) = value else NotSet end 
-	
+		try (input as JObj)(_key) = value else NotSet end
+
 class val TravArrayIndex is JTraversal
 	let _idx: USize
 
 	new val create(idx: USize) =>
 		_idx = idx
-	
+
 	fun apply(v: J): (J | NotSet) =>
 		try (v as JArr)(_idx)? else NotSet end
-	
+
 	fun update(input: J, value: (J | NotSet)): (J | NotSet) =>
 		try (input as JArr)(_idx)? = value else NotSet end
-	
+
 class val TravChoice is JTraversal
 	let _a: JTraversal
 	let _b: JTraversal
@@ -62,7 +62,7 @@ class val TravChoice is JTraversal
 		| let j: J => j
 		| NotSet => _b(v)
 		end
-	
+
 	fun update(input: J, value: (J | NotSet)): (J | NotSet) =>
 		match _a.update(input, value)
 		| let out: J => out
@@ -97,10 +97,10 @@ class val UpdateTrav is JTraversal
 			else trav
 			end
 
-	
+
 	fun apply(v: J): (J | NotSet) =>
 		_trav(v) = _value
-	
+
 	fun update(input: J, value: (J | NotSet)): (J | NotSet) =>
 		_trav(input) = value
 

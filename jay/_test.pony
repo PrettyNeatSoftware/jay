@@ -65,7 +65,7 @@ class TestJsonEquality is UnitTest
                 + ("foo", JObj
                     + ("bar", false)
                 )))
-        
+
         let a = "dummy"
         let b = JObj + ("value", "dummy")
         let abLens = JLens("value") / JLens // try obtaining the "value" field of an object, if that doesnt work return the whole thing
@@ -78,7 +78,7 @@ class TestLensAssign is UnitTest
         let x = JObj
             + ("foo", "bar")
             + ("deep", JObj + ("space", I64(9)))
-        
+
         let foo' = JLens("foo")
 
         let foobazz = (JLens("foo") = "bazz").json(x)
@@ -87,7 +87,7 @@ class TestLensAssign is UnitTest
             h.assert_eq[String](foo'.json(foobazz as J) as String, "bazz")
         else h.fail(foobazz.string())
         end
-    
+
 class TestLensChoice is UnitTest
     fun name(): String => "LensChoice"
     fun ref apply(h: TestHelper) =>
@@ -101,11 +101,11 @@ class TestLensChoice is UnitTest
             h.assert_eq[String](valueLens.json(y) as String, "foo")
         else h.fail("failed")
         end
-    
+
 primitive AssertJson
 	fun eq(h: TestHelper, a: (J | NotSet), b: (J | NotSet)) =>
 		h.assert_true(JEq(a, b), "Expected (" + a.string() + ") == (" + b.string() + ")")
-	
+
 	fun ne(h: TestHelper, a: (J | NotSet), b: (J | NotSet)) =>
 		h.assert_false(JEq(a, b), "Expected (" + a.string() + ") != (" + b.string() + ")")
 

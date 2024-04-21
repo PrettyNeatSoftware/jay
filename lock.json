@@ -1,0 +1,12 @@
+{
+  "locks": [
+    {
+      "locator": "github.com/ponylang/json.git",
+      "revision": "main"
+    },
+    {
+      "locator": "github.com/niclash/pony-metric.git",
+      "revision": "master"
+    }
+  ]
+}
